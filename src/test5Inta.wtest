@@ -20,9 +20,10 @@ test "Inta" {
  	parcela2.poderPlantar(soja08mtr)
  	parcela2.poderPlantar(menta1mtr2)
  	
- 	inta.coleccionDeParcelas(parcela1,parcela2)
+ 	inta.coleccionDeParcelas(parcela1)
+ 	inta.coleccionDeParcelas(parcela2)
 	
-	assert.equals(5,inta.cantidadTotalDePlantas())
+	
 	assert.equals(2.5,inta.promedioDePlantasPorParcelas())
 	
 }
