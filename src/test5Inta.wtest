@@ -1,0 +1,28 @@
+import plantas.*
+import parcelas.*
+import Inta.*
+test "Inta" {
+	
+	/*plantas */
+	const menta1mtr = new Menta(anoDeObtencion=2001 , altura = 1 )
+	const menta1mtr2 = new Hierbabuena(anoDeObtencion=2001 , altura = 1 )
+	const quinoa1 = new Quinoa(anoDeObtencion=2010 , altura = 0.6 , espacioQueOcupa = 0.2)
+	const soja06mtr = new Soja(anoDeObtencion=2009 , altura = 0.6 )
+	const soja08mtr = new SojaTransgenica(anoDeObtencion=2009 , altura = 0.8)
+	/*parcelas */
+	const parcela1 = new ParcelaIndustriales( ancho =20 , largo =1 , horasDeSolRecibidas =7)
+ 	const parcela2 = new ParcelaEcologica( ancho =20 , largo =1 , horasDeSolRecibidas =7)
+    /*agregar plantas */
+    parcela1.poderPlantar(menta1mtr)
+ 	parcela1.poderPlantar(quinoa1)
+ 	  
+ 	parcela2.poderPlantar(soja06mtr)
+ 	parcela2.poderPlantar(soja08mtr)
+ 	parcela2.poderPlantar(menta1mtr2)
+ 	
+ 	inta.coleccionDeParcelas(parcela1,parcela2)
+	
+	assert.equals(5,inta.cantidadTotalDePlantas())
+	assert.equals(2.5,inta.promedioDePlantasPorParcelas())
+	
+}

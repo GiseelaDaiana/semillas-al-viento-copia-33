@@ -1,0 +1,31 @@
+
+import plantas.*
+test "testParte1" {
+	/*Plantas menta */
+	const menta1mtr = new Menta(anoDeObtencion=2001 , altura = 1 )
+	const menta03mtr = new Menta(anoDeObtencion=2001 , altura = 0.3) 
+	
+	assert.that(menta1mtr.daNuevasSemillas()) 
+	assert.equals(2,menta1mtr.cuantoEspacioOcupa())
+    assert.notThat(menta03mtr.daNuevasSemillas()) 
+	assert.equals(1.3,menta03mtr.cuantoEspacioOcupa())
+    
+    /* Plantas Soja */
+    const soja06mtr = new Soja(anoDeObtencion=2009 , altura = 0.6 )
+    assert.notThat(soja06mtr.daNuevasSemillas()) 
+	assert.equals(0.3,soja06mtr.cuantoEspacioOcupa())
+	assert.equals(7,soja06mtr.horasDeSol())
+	
+	/* Plantas quinoa */
+    const quinoa1 = new Quinoa(anoDeObtencion=2010 , altura = 0.6 , espacioQueOcupa = 0.2)
+    assert.that(quinoa1.daNuevasSemillas()) 
+    const quinoa2 = new Quinoa(anoDeObtencion=2006 , altura = 0.6 , espacioQueOcupa = 0.9)
+    assert.that(quinoa2.daNuevasSemillas()) 
+    
+    /*Parte de Variedades */
+    
+    const soja08mtr = new SojaTransgenica(anoDeObtencion=2009 , altura = 0.8)
+    assert.notThat(soja08mtr.daNuevasSemillas()) 
+    const menta1mtr2 = new Hierbabuena(anoDeObtencion=2001 , altura = 1 )
+	assert.equals(4,menta1mtr2.cuantoEspacioOcupa())
+}

@@ -1,0 +1,26 @@
+import parcelas.*
+import plantas.*
+test "parcelas" {
+		/*parcela */
+		const parcela1 = new Parcela( ancho =20 , largo =1 , horasDeSolRecibidas =10)
+	      
+	    assert.equals(20,parcela1.superficieDeParcela())
+		assert.equals(4,parcela1.toleranciaDePlantas())
+		/*plantas de soja */
+		
+		const soja1 = new Soja(anoDeObtencion=2009 , altura = 1 )
+		const soja2 = new Soja(anoDeObtencion=2009 , altura = 1 )
+		const soja3 = new Soja(anoDeObtencion=2009 , altura = 1 )
+		const soja4 = new Soja(anoDeObtencion=2009 , altura = 1 )
+		const soja5 = new Soja(anoDeObtencion=2009 , altura = 1 )
+		
+		parcela1.poderPlantar(soja1)
+		parcela1.poderPlantar(soja2)
+		parcela1.poderPlantar(soja3)
+		parcela1.poderPlantar(soja4)
+		
+		assert.notThat(parcela1.tieneComplicaciones())
+		
+		/*assert.throwsException(parcela1.poderPlantar(soja5))*/
+		
+}

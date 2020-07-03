@@ -1,0 +1,20 @@
+import plantas.*
+import parcelas.*
+
+test "parcelas ideales" {
+	/*plantas */
+	const menta1mtr = new Menta(anoDeObtencion=2001 , altura = 1 )
+	const menta1mtr2 = new Hierbabuena(anoDeObtencion=2001 , altura = 1 )
+	const quinoa1 = new Quinoa(anoDeObtencion=2010 , altura = 0.6 , espacioQueOcupa = 0.2)
+	const soja06mtr = new Soja(anoDeObtencion=2009 , altura = 0.6 )
+	const soja08mtr = new SojaTransgenica(anoDeObtencion=2009 , altura = 0.8)
+	/*parcelas */
+	const parcela1 = new Parcela( ancho =20 , largo =1 , horasDeSolRecibidas =7)
+	
+	assert.that(quinoa1.parcelaIdeal(parcela1))
+	assert.that(soja06mtr.parcelaIdeal(parcela1))
+	assert.that(soja06mtr.parcelaIdeal(parcela1))
+	assert.that(menta1mtr.parcelaIdeal(parcela1))
+	
+	
+}
